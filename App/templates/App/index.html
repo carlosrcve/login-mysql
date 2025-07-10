@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<h3 style="color:red; text-align: center;">Welcome, {{ request.session.username }}..... Accionista de la Empresa Malaga </h3>
+	<title>Home</title>
+</head>
+<body>
+	<table  align="center" style="color:black; margin: auto; width: 80%;"; BORDER>
+		<caption>Estructura Accionaria de la Empresa Malaga</caption>
+	  <tr>
+	    <td>&nbsp;</td>
+	    <td>Nº Acciones</td>
+	    <td>Capital Aportado</td>
+	    <td>Beneficios</td>
+	    <td>Beneficios por Accion</td>
+	  </tr>
+	  <tr>
+	    <td>Juan Perez</td>
+	    <td>4500</td>
+	    <td>14.500.000,00</td>
+	    <td>1.500.000,00</td>
+	    <td>60.45</td>
+	  </tr>
+	  <tr>
+	    <td>Pedro de La Casa</td>
+	    <td>4100</td>
+	    <td>18.500.000,00</td>
+	    <td>1.850.000,00</td>
+	    <td>60.45</td>
+	  </tr>
+	  <tr>
+	    <td>Mario Oviedo</td>
+	    <td>4095</td>
+	    <td>16.7500.000,00</td>
+	    <td>1.950.000,00</td>
+	    <td>60.45</td>
+	  </tr>
+	  <tr>
+	    <td>Miguel Valladolid</td>
+	    <td>4200</td>
+	    <td>17.500.000,00</td>
+	    <td>1.400.000,00</td>
+	    <td>60.45</td>
+	  </tr>
+	</table>
+
+
+	{% if request.session.is_authenticated %}
+
+<h4 style="color:green; text-align: left;"> Cerrar Session 👇</h4>
+<a  class="navbar-brand info-title" href="/logout/" style="color: cyan; font-size: 35px;">Logout</a>
+	{% else %}
+	<h3>Not logged in</h3>
+	{% endif %}
+
+	
+</body>
+</html>
